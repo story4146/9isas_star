@@ -2,8 +2,8 @@
 :root {
     --bg-color: #000000;
     --text-color: #f0f0f0;
-    --primary-color: #00FFFF; /* لون فيروزي من الشعار */
-    --secondary-color: #FF00FF; /* لون فوشيا من الشعار */
+    --primary-color: #00FFFF;
+    --secondary-color: #FF00FF;
     --card-bg-color: #1a1a1a;
     --border-color: #333333;
 }
@@ -37,8 +37,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* للسماح للعناصر بالانتقال إلى سطر جديد في الشاشات الصغيرة */
-    gap: 15px; /* مسافة بين العناصر */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 header h1 {
@@ -74,7 +74,7 @@ header nav a:hover {
 .search-box {
     display: flex;
     align-items: center;
-    margin-right: auto; /* يدفع صندوق البحث إلى اليسار في حالة RTL */
+    margin-right: auto;
 }
 
 .search-box form {
@@ -129,12 +129,12 @@ header nav a:hover {
     gap: 20px;
     padding: 20px;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* لإخفاء شريط التمرير في Firefox */
-    -ms-overflow-style: none;  /* لإخفاء شريط التمرير في Internet Explorer و Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .carousel-container::-webkit-scrollbar {
-    display: none; /* لإخفاء شريط التمرير في Chrome و Safari */
+    display: none;
 }
 
 .carousel-card {
@@ -207,7 +207,7 @@ header nav a:hover {
 
 .story-card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -263,8 +263,8 @@ header nav a:hover {
 }
 
 .story-detail .story-content {
-    line-height: 2.2; /* تباعد أكبر للسطور لراحة العين */
-    font-size: 1.2em; /* حجم خط أكبر */
+    line-height: 2.2;
+    font-size: 1.2em;
     color: var(--text-color);
 }
 
