@@ -1,0 +1,282 @@
+/* General Styles */
+:root {
+    --bg-color: #000000;
+    --text-color: #f0f0f0;
+    --primary-color: #00FFFF; /* لون فيروزي من الشعار */
+    --secondary-color: #FF00FF; /* لون فوشيا من الشعار */
+    --card-bg-color: #1a1a1a;
+    --border-color: #333333;
+}
+
+body {
+    font-family: 'Changa', sans-serif;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--bg-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    border-bottom: 2px solid var(--border-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* للسماح للعناصر بالانتقال إلى سطر جديد في الشاشات الصغيرة */
+    gap: 15px; /* مسافة بين العناصر */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header h1 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* يدفع صندوق البحث إلى اليسار في حالة RTL */
+}
+
+.search-box form {
+    display: flex;
+    gap: 5px;
+}
+
+.search-box input[type="text"] {
+    padding: 8px 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.search-box input[type="text"]::placeholder {
+    color: #888;
+}
+
+.search-box input[type="text"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
+}
+
+.search-box button[type="submit"] {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button[type="submit"]:hover {
+    background-color: #e500e5;
+}
+
+/* Stories Carousel Section */
+.stories-carousel {
+    padding: 50px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* لإخفاء شريط التمرير في Firefox */
+    -ms-overflow-style: none;  /* لإخفاء شريط التمرير في Internet Explorer و Edge */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* لإخفاء شريط التمرير في Chrome و Safari */
+}
+
+.carousel-card {
+    flex: 0 0 auto;
+    width: 180px;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--primary-color);
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel-card h4 {
+    margin: 15px 10px;
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Latest Stories Section Title */
+.section-title {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.latest-stories .container {
+    text-align: center;
+}
+
+/* Stories Grid Section */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.story-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--secondary-color);
+}
+
+.story-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-card-content {
+    padding: 15px;
+}
+
+.story-card h4 {
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.story-card h4 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.story-card h4 a:hover {
+    color: var(--secondary-color);
+}
+
+.story-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+/* Story Detail Page (for individual stories) */
+.story-detail {
+    padding: 50px 0;
+}
+
+.story-detail .container {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.story-detail h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.story-detail .story-meta {
+    text-align: center;
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 40px;
+}
+
+.story-detail .story-content {
+    line-height: 2.2; /* تباعد أكبر للسطور لراحة العين */
+    font-size: 1.2em; /* حجم خط أكبر */
+    color: var(--text-color);
+}
+
+.story-detail .story-content p {
+    margin-bottom: 1.5em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--border-color);
+}
