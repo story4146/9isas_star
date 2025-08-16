@@ -56,8 +56,9 @@ header .container {
 }
 
 .logo-container img {
-    height: 100px;
+    height: 100px; /* لتصغير الحجم الأساسي */
     width: auto;
+    max-width: 100%; /* هذا السطر هو الأهم لمنع الشعار من الخروج عن الإطار */
 }
 
 header nav {
