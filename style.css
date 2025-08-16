@@ -16,6 +16,9 @@ body {
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -35,20 +38,31 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: 15px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-header h1 a {
-    color: var(--text-color);
-    text-decoration: none;
+.logo-container {
+    width: 100%;
+    text-align: center;
+}
+
+.logo-container img {
+    height: 100px;
+    width: auto;
+}
+
+header nav {
+    order: 2;
+    text-align: center;
 }
 
 header nav ul {
@@ -56,6 +70,7 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -72,17 +87,21 @@ header nav a:hover {
 
 /* Search Box */
 .search-box {
+    order: 3;
     display: flex;
     align-items: center;
-    margin-right: auto;
+    justify-content: center;
+    width: 100%;
 }
-
 .search-box form {
     display: flex;
     gap: 5px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .search-box input[type="text"] {
+    flex-grow: 1;
     padding: 8px 12px;
     border: 2px solid var(--primary-color);
     border-radius: 5px;
@@ -208,7 +227,7 @@ header nav a:hover {
 .story-card img {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain; /* هذا هو التغيير */
 }
 
 .story-card-content {
@@ -272,6 +291,70 @@ header nav a:hover {
     margin-bottom: 1.5em;
 }
 
+/* Story Parts List */
+.story-parts-list {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.story-parts-list h3 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.story-parts-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.story-parts-list li a {
+    display: block;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.story-parts-list li a:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* Story Navigation */
+.story-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.story-navigation .prev-part,
+.story-navigation .next-part {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.story-navigation .prev-part.disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.story-navigation a:hover {
+    background-color: var(--secondary-color);
+}
+
 /* Footer */
 footer {
     background-color: var(--bg-color);
@@ -279,4 +362,5 @@ footer {
     text-align: center;
     padding: 1.5rem 0;
     border-top: 2px solid var(--border-color);
+    margin-top: auto;
 }
